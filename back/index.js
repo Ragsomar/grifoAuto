@@ -13,7 +13,7 @@ app.get('/', (request, response) => {
 	response.send('Welcome to Grifo Auto server')
 })
 
-app.get('/', (request, response) => {
+app.get('/home', (request, response) => {
 	connection.query('SELECT * FROM ', (err, results) => {
 		if (err) {
 			console.log(err)

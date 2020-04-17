@@ -1,0 +1,20 @@
+.background {
+	background: linear-gradient(#eee, #fff, #eee);
+}
+
+.red {
+	color: red;
+	background-color: blue;
+}
+
+.grey {
+	background-color: grey;
+}
+
+.white {
+	background-color: white;
+}
+
+.border\:white {
+	border-color: white;
+}

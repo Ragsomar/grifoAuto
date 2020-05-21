@@ -14,24 +14,19 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			name: null,
-			isLoaded: false,
+			modele: '',
 		}
 	}
 
 	componentDidMount() {
-		const url = 'http://localhost:3000/home'
-		axios
-			.get(url)
-			.then((data) =>
-				this.setState({ name: data.data[0].modele, isLoaded: true })
-			)
+		const url = 'https://localhost:3000/home'
+		axios.get(url).then((res) => {
+			this.setState({ photo: res.data[0].modele })
+		})
 	}
 
 	render() {
-		return this.state.isLoaded !== true ? (
-			<h2>Loading ...</h2>
-		) : (
+		return (
 			<div className='height-max-100 flex-column' id='outer-container'>
 				<Header />
 				<main className='flex1 overflow height-max-100' id='page-wrap'>

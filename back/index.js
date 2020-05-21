@@ -14,7 +14,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/home', (request, response) => {
-	connection.query('SELECT modele FROM vehicle', (err, results) => {
+	connection.query('SELECT * FROM photo', (err, results) => {
 		if (err) {
 			console.log(err)
 			response.status(500).send('Erreur retrieving ')

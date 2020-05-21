@@ -11,3 +11,11 @@ CREATE TABLE vehicle (
     motor VARCHAR (50) NOT NULL,
     interior VARCHAR (25) NULL
 );
+
+CREATE TABLE photo (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    img_path VARCHAR (500) NOT NULL,
+    color VARCHAR (50) NOT NULL,
+    modele INT,
+    FOREIGN KEY (modele) REFERENCES vehicle (id)
+);

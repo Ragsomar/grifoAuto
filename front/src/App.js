@@ -14,14 +14,14 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			modele: '',
+			photo: [],
 		}
 	}
 
 	componentDidMount() {
-		const url = 'https://localhost:3000/home'
+		const url = 'http://localhost:3000/home'
 		axios.get(url).then((res) => {
-			this.setState({ photo: res.data[0].modele })
+			this.setState({ photo: res.data })
 		})
 	}
 
@@ -30,7 +30,7 @@ class App extends React.Component {
 			<div className='height-max-100 flex-column' id='outer-container'>
 				<Header />
 				<main className='flex1 overflow height-max-100' id='page-wrap'>
-					<Homepage />
+					<Homepage photos={this.state.photo} />
 					<ProductPage />
 				</main>
 			</div>
